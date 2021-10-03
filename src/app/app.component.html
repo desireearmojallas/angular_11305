@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>{{ title }}</h1>
+    <br/>
+    <div class="inputs">
+        <label for="num1">Enter 1st number:</label><br/>
+        <input class="form-control" (input)="getNum1(num1.value)" type="number" #num1>
+        <br/>
+        <label for="num2">Enter 2nd number:</label><br/>
+        <input class="form-control" (input)="getNum2(num2.value)" type="number" #num2>
+    </div>
+
+    <br/><br/>
+
+    <div class="operations">
+        <button (click)="add()" id="add" class="btn btn-outline-dark">+</button>
+        <button (click)="subtract()" id="subtract" class="btn btn-outline-dark">-</button>
+        <button (click)="multiply()" id="multiply" class="btn btn-outline-dark">*</button>
+        <button (click)="divide()" id="divide" class="btn btn-outline-dark">/</button>
+    </div>
+
+    <br/>
+
+    <hr/>
+
+    <div *ngIf="answer">
+        <input type="text" class="nothing" [value]="answer" readonly/>
+    </div> 
+</div>
